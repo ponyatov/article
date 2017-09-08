@@ -1,3 +1,11 @@
+
+.PHONY: all
+all: d3view.html fig/person.png
+
+# dot to png
+%.png: %.dot
+	dot -T png -o $@ $<
+	
 # JavaScript libs 
 NEO	= neo4j-web.min.js
 D3	= d3.v3.min.js
