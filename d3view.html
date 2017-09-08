@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<script src="lib/d3.v3.min.js"></script>
+	<script src="lib/neo4j-web.min.js"></script>
+</head>
+
+<body>
+
+<title>D3-powered neo4j database viewer</title>
+<h1>D3-powered neo4j database viewer</h1>
+
+<form name="login">
+<label>BOLT: <input name="bolt" value="bolt://hobby-bahdmkgcjildgbkepggmibpl.dbs.graphenedb.com:24786"/></label>
+<label>user: <input name="user" value="hedge"/></label>
+<label>password: <input name="passwd" value="********"/></label>
+<input type="button" name="go" onclick="neo4j_connect();" value="connect"/>
+</form>
+
+</body>
+
+<script>
+window.onload = function() {
+	console.log('Hello');
+}
+
+function neo4j_connect() {
+	// open neo4j connection
+	console.log("Connecting to "+document.forms.login.elements.bolt.value);
+	// start neo4j driver
+	var driver = neo4j.v1.driver(
+			document.forms.login.elements.bolt.value,
+			neo4j.v1.auth.basic(
+					document.forms.login.elements.user.value,
+					document.forms.login.elements.passwd.value));
+	console.log("neo4j driver: "+driver);
+	driver.onError = function (error) { console.log('Driver instantiation failed', error); };
+	driver.onCompleted = function() {
+		// open neo4j session
+		var session = driver.session(); console.log(session);
+		session.close();
+	}
+	driver.close(); // required: see browser page live time
+	}
+</script>
+
+</html>

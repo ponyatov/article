@@ -17,3 +17,8 @@ database:	Planning
 user:		hedge
 passwd:		<shadowed>
 
+### Files
+
+d3view.html + lib/		neo4j database visualizer in JavaScript/D3 
+						(run make to download offline libs)
+
