@@ -1,0 +1,26 @@
+digraph architecture {
+
+subgraph cluster_hosting {
+label = "single hosting server or cloud";
+color="#DDFFFF"; style=filled;
+//node [style=filled;color=white];
+
+	subgraph cluster_app {
+		style=filled; color=white;
+		label="application\nserver";
+		rankdir=TD;
+		GUI_renderer [label="GUI\nrenderer"];
+		TransactionEventHandler;
+};
+
+neo4j -> GUI_renderer [dir=both,label="connection to\nView/Controller\nelements"];
+neo4j [label="neo4j\ngraph storage server",fillcolor=white];
+TransactionEventHandler -> neo4j [dir=both,label=" BOLT\l protocol"];
+}
+
+client [label="client\n(web browser)"];
+client -> GUI_renderer [label=" user-generated\n events"];
+GUI_renderer -> client [label=" html\l representation\rupdates"]; 
+neo4j -> client [style=dotted,dir=both,label=" neo4j integrated\nweb interface"];
+
+}

@@ -1,6 +1,6 @@
 
 .PHONY: all
-all: d3view.html fig/person.png
+all: d3view.html fig/person.png fig/mobile.png fig/architecture.png
 
 # dot to png
 %.png: %.dot
