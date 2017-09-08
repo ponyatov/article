@@ -30,12 +30,11 @@ function neo4j_connect() {
 					document.forms.login.elements.user.value,
 					document.forms.login.elements.passwd.value));
 	console.log("neo4j driver: "+driver);
-	driver.onError = function (error) { console.log('Driver instantiation failed', error); };
-	driver.onCompleted = function() {
-		// open neo4j session
-		var session = driver.session(); console.log(session);
-		session.close();
-	}
+	var session = driver.session(); console.log(session);
+	session.run("return 1")
+		.then(()=>alert("ok"))
+		.catch(error=>alert("error"));
+	session.close();
 	driver.close(); // required: see browser page live time
 	}
 </script>
