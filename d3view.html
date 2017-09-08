@@ -14,14 +14,15 @@
 <label>BOLT: <input name="bolt" value="bolt://hobby-bahdmkgcjildgbkepggmibpl.dbs.graphenedb.com:24786"/></label>
 <label>user: <input name="user" value="hedge"/></label>
 <label>password: <input name="passwd" value="********"/></label>
-<input type="button" name="go" onclick="neo4j_connect();" value="connect"/>
+<input type="button" name="go" disabled="true" onclick="neo4j_connect();" value="connect"/>
 </form>
 
 </body>
 
 <script>
 window.onload = function() {
-	console.log('Hello');
+	// block neo4j until full page load including external libs
+	document.forms.login.elements.go.disabled=false;
 }
 
 function neo4j_connect() {
