@@ -9,3 +9,11 @@
 (c) Dmitry Ponyatov <<dponyatov@gmail.com>> , All right reserved
 
 github: https://github.com/ponyatov/article
+
+### graphenedb.com hosed demo neo4j database
+
+BOLT:		bolt://hobby-bahdmkgcjildgbkepggmibpl.dbs.graphenedb.com:24786
+database:	Planning
+user:		hedge
+passwd:		<shadowed>
+
