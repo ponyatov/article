@@ -1,0 +1,56 @@
+digraph {
+// <Record x=<Node id=0 labels=set([u'main']) properties={u'title': u'main'}>>
+0 [label="main",shape=oval,style=filled,fillcolor=orange];
+// <Record x=<Node id=1 labels=set([u'type']) properties={u'title': u'function'}>>
+1 [label="function",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+2 [label="type",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=3 labels=set([u'type']) properties={u'title': u'int'}>>
+3 [label="int",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=4 labels=set([u'int']) properties={u'value': 0}>>
+4 [label="0",shape=circle,style=filled,fillcolor=cyan];
+// <Record x=<Node id=5 labels=set([u'arg']) properties={u'title': u'argc'}>>
+5 [label="argc",shape=oval,style=filled,fillcolor=lightgrey];
+// <Record x=<Node id=6 labels=set([u'arg']) properties={u'title': u'argv'}>>
+6 [label="argv",shape=oval,style=filled,fillcolor=lightgrey];
+// <Record x=<Node id=7 labels=set([u'type']) properties={u'title': u'pointer'}>>
+7 [label="pointer",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=8 labels=set([u'type']) properties={u'title': u'char'}>>
+8 [label="char",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=9 labels=set([u'type']) properties={u'title': u'array'}>>
+9 [label="array",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=10 labels=set([u'type']) properties={u'title': u'float'}>>
+10 [label="float",shape=box,style=filled,fillcolor=green];
+// <Record x=<Node id=0 labels=set([u'main']) properties={u'title': u'main'}> r=<Relationship id=4 start=0 end=1 type=u'isa' properties={}> y=<Node id=1 labels=set([u'type']) properties={u'title': u'function'}>>
+0 -> 1 [label=" isa",color=blue,fontcolor=blue] ;
+// <Record x=<Node id=10 labels=set([u'type']) properties={u'title': u'float'}> r=<Relationship id=15 start=10 end=2 type=u'super' properties={}> y=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+10 -> 2 [label=" ako",color=brown,fontcolor=brown] ;
+// <Record x=<Node id=9 labels=set([u'type']) properties={u'title': u'array'}> r=<Relationship id=14 start=9 end=2 type=u'super' properties={}> y=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+9 -> 2 [label=" ako",color=brown,fontcolor=brown] ;
+// <Record x=<Node id=8 labels=set([u'type']) properties={u'title': u'char'}> r=<Relationship id=13 start=8 end=2 type=u'super' properties={}> y=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+8 -> 2 [label=" ako",color=brown,fontcolor=brown] ;
+// <Record x=<Node id=7 labels=set([u'type']) properties={u'title': u'pointer'}> r=<Relationship id=12 start=7 end=2 type=u'super' properties={}> y=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+7 -> 2 [label=" ako",color=brown,fontcolor=brown] ;
+// <Record x=<Node id=3 labels=set([u'type']) properties={u'title': u'int'}> r=<Relationship id=6 start=3 end=2 type=u'super' properties={}> y=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+3 -> 2 [label=" ako",color=brown,fontcolor=brown] ;
+// <Record x=<Node id=1 labels=set([u'type']) properties={u'title': u'function'}> r=<Relationship id=5 start=1 end=2 type=u'super' properties={}> y=<Node id=2 labels=set([u'type']) properties={u'title': u'type'}>>
+1 -> 2 [label=" ako",color=brown,fontcolor=brown] ;
+// <Record x=<Node id=5 labels=set([u'arg']) properties={u'title': u'argc'}> r=<Relationship id=8 start=5 end=3 type=u'isa' properties={}> y=<Node id=3 labels=set([u'type']) properties={u'title': u'int'}>>
+5 -> 3 [label=" isa",color=blue,fontcolor=blue] ;
+// <Record x=<Node id=4 labels=set([u'int']) properties={u'value': 0}> r=<Relationship id=7 start=4 end=3 type=u'isa' properties={}> y=<Node id=3 labels=set([u'type']) properties={u'title': u'int'}>>
+4 -> 3 [label=" isa",color=blue,fontcolor=blue] ;
+// <Record x=<Node id=0 labels=set([u'main']) properties={u'title': u'main'}> r=<Relationship id=3 start=0 end=3 type=u'return' properties={}> y=<Node id=3 labels=set([u'type']) properties={u'title': u'int'}>>
+0 -> 3 [label=" return"] ;
+// <Record x=<Node id=0 labels=set([u'main']) properties={u'title': u'main'}> r=<Relationship id=2 start=0 end=4 type=u'return' properties={}> y=<Node id=4 labels=set([u'int']) properties={u'value': 0}>>
+0 -> 4 [label=" return"] ;
+// <Record x=<Node id=6 labels=set([u'arg']) properties={u'title': u'argv'}> r=<Relationship id=10 start=6 end=5 type=u'size' properties={}> y=<Node id=5 labels=set([u'arg']) properties={u'title': u'argc'}>>
+6 -> 5 [label=" size"] ;
+// <Record x=<Node id=0 labels=set([u'main']) properties={u'title': u'main'}> r=<Relationship id=0 start=0 end=5 type=u'arg' properties={}> y=<Node id=5 labels=set([u'arg']) properties={u'title': u'argc'}>>
+0 -> 5 [label=" arg"] ;
+// <Record x=<Node id=5 labels=set([u'arg']) properties={u'title': u'argc'}> r=<Relationship id=9 start=5 end=6 type=u'next' properties={}> y=<Node id=6 labels=set([u'arg']) properties={u'title': u'argv'}>>
+5 -> 6 [label=" next",color=darkgreen,fontcolor=darkgreen] ;
+// <Record x=<Node id=0 labels=set([u'main']) properties={u'title': u'main'}> r=<Relationship id=1 start=0 end=6 type=u'arg' properties={}> y=<Node id=6 labels=set([u'arg']) properties={u'title': u'argv'}>>
+0 -> 6 [label=" arg"] ;
+// <Record x=<Node id=6 labels=set([u'arg']) properties={u'title': u'argv'}> r=<Relationship id=11 start=6 end=7 type=u'isa' properties={}> y=<Node id=7 labels=set([u'type']) properties={u'title': u'pointer'}>>
+6 -> 7 [label=" isa",color=blue,fontcolor=blue] ;
+}
