@@ -1,10 +1,5 @@
 <html>
 
-<head>
-	<script src="lib/d3.v3.min.js"></script>
-	<script src="lib/neo4j-web.min.js"></script>
-</head>
-
 <body>
 
 <title>D3-powered neo4j database viewer</title>
@@ -14,14 +9,15 @@
 <label>BOLT: <input name="bolt" value="bolt://hobby-bahdmkgcjildgbkepggmibpl.dbs.graphenedb.com:24786"/></label>
 <label>user: <input name="user" value="hedge"/></label>
 <label>password: <input name="passwd" value="********"/></label>
-<input type="button" name="go" onclick="neo4j_connect();" value="connect"/>
+<input type="button" name="go" disabled="true" onclick="neo4j_connect();" value="connect"/>
 </form>
 
 </body>
 
 <script>
 window.onload = function() {
-	console.log('Hello');
+	// block neo4j until full page load including external libs
+	document.forms.login.elements.go.disabled=false;
 }
 
 function neo4j_connect() {
@@ -34,14 +30,16 @@ function neo4j_connect() {
 					document.forms.login.elements.user.value,
 					document.forms.login.elements.passwd.value));
 	console.log("neo4j driver: "+driver);
-	driver.onError = function (error) { console.log('Driver instantiation failed', error); };
-	driver.onCompleted = function() {
-		// open neo4j session
-		var session = driver.session(); console.log(session);
-		session.close();
-	}
+	var session = driver.session(); console.log(session);
+	session.run("return 1")
+		.then(()=>alert("ok"))
+		.catch(error=>alert("error"));
+	session.close();
 	driver.close(); // required: see browser page live time
 	}
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.2/d3.min.js"></script>
+<script src="https://cdn.rawgit.com/neo4j/neo4j-javascript-driver/1.5/lib/browser/neo4j-web.min.js"></script>
 
 </html>
