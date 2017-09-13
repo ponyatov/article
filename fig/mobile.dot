@@ -1,5 +1,8 @@
 digraph mobile {
 
+newrank=true;
+rankdir=TB;
+
 neo4j [label="remote neo4j storage server\nhosted on GrapheneDB.com"];
 
 subgraph cluster_mobile {label="mobile client\n(Android)"
@@ -40,5 +43,7 @@ label="SmartWatch (Pebble)";
 lite_gui;
 
 }
+
+{rank=same rankdir=TD neo4j offline }
 
 }
