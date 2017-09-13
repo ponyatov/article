@@ -27,6 +27,6 @@ d3view.html + lib/		neo4j database visualizer in JavaScript/D3
 
 ### Overleaf 
 
-Article [draft](https://www.overleaf.com/11039646jmkfnhxvqpfp) on Overleaf
+Article [draft](https://www.overleaf.com/secret) on Overleaf
 
-git clone -o overleaf https://git.overleaf.com/11039646jmkfnhxvqpfp overleaf
+git clone -o overleaf https://git.overleaf.com/secret overleaf
