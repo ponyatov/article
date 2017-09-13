@@ -25,3 +25,8 @@ passwd:		<shadowed>
 d3view.html + lib/		neo4j database visualizer in JavaScript/D3 
 						(run make to download offline libs)
 
+### Overleaf 
+
+Article [draft](https://www.overleaf.com/11039646jmkfnhxvqpfp) on Overleaf
+
+git clone -o overleaf https://git.overleaf.com/11039646jmkfnhxvqpfp article_backup
