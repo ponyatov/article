@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed Sep 13 09:30:29 SAMT 2017
+markTmpDer=true
+builderNum=2
+outputDir=overleaf/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=overleaf
+mainTexFile=main.tex
+outputFile=main.pdf
+langSpell=en
+markDer=true
+srcDir=overleaf/
