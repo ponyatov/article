@@ -1,0 +1,15 @@
+
+digraph {
+rankdir=LR;
+
+// <Node id=0 labels=set([u'me']) properties={u'firstname': u'Dmitry', u'title': u'Ponyatov', u'shape': u'circle', u'fillcolor': u'green', u'secondname': u'Ponyatov', u'email': u'dponyatov@gmail.com'}>
+n0 [label="Ponyatov",shape=circle,style=filled,fillcolor=green];
+
+// <Node id=1 labels=set([u'Person', u'class']) properties={u'shape': u'box', u'fillcolor': u'lightpink', u'title': u'Person'}>
+n1 [label="Person",shape=box,style=filled,fillcolor=lightpink];
+
+// <Relationship id=0 start=0 end=1 type=u'isa' properties={u'color': u'blue', u'fontcolor': u'blue', u'fillcolor': u'blue'}>
+n0 -> n1 [label=" isa",color=blue,fontcolor=blue];
+
+}
+

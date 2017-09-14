@@ -32,17 +32,24 @@ print >>dot,'\ndigraph {\nrankdir=LR;\n'
 from neo4j.v1 import GraphDatabase, basic_auth
 
 def Node(X):
-    R = '// %s\n'%X
-    try:
-        R += 'n%s [label="%s"];\n'%(X.id,X.properties['title'])
-    except KeyError:
-        R += 'n%s;\n'%X.id
-    return R
+    try: label = 'label="%s"'%X.properties['title']
+    except KeyError: label=''
+    try: shape = ',shape=%s'%X.properties['shape']
+    except KeyError: shape=''
+    try: color = ',style=filled,fillcolor=%s'%X.properties['fillcolor']
+    except KeyError: color=''
+    try: fontcolor = ',fontcolor=%s'%X.properties['fontcolor']
+    except KeyError: fontcolor=''
+    return '// %s\nn%s [%s%s%s%s];\n'%(X,X.id,label,shape,color,fontcolor)
 
 def Edge(Y):
-    R = '// %s\n'%Y
-    R += 'n%s -> n%s [ label = " %s" ];\n' % (Y.start,Y.end,Y.type)
-    return R
+    try: label = 'label=" %s"'%Y.type
+    except KeyError: label=''
+    try: color = ',color=%s'%Y.properties['color']
+    except KeyError: color=''
+    try: fontcolor = ',fontcolor=%s'%Y.properties['fontcolor']
+    except KeyError: fontcolor=''
+    return '// %s\nn%s -> n%s [%s%s%s];'%(Y,Y.start,Y.end,label,color,fontcolor)
 
 with GraphDatabase.driver(BOLT, auth=basic_auth(USER, PASS)) as driver:
     print 'driver',driver
