@@ -1,4 +1,16 @@
+
 digraph {
 rankdir=LR;
-Ponyatov -> Person [label="isa"];
+
+// <Node id=0 labels=set([u'me']) properties={u'secondname': u'Ponyatov', u'email': u'dponyatov@gmail.com', u'firstname': u'Dmitry', u'title': u'Ponyatov'}>
+n0 [label="Ponyatov"];
+
+// <Node id=1 labels=set([u'Person', u'class']) properties={u'title': u'Person'}>
+n1 [label="Person"];
+
+// <Relationship id=0 start=0 end=1 type=u'isa' properties={}>
+n0 -> n1 [ label = " isa" ];
+
+
 }
+
