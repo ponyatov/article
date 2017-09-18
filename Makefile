@@ -23,7 +23,7 @@ SRC = src/hello.c
 	dot -T png -o $@ $<
 
 .PHONY: all
-all: d3view.html $(PNG) article.pdf
+all: d3view.html $(PNG) tmp/article.pdf
 
 LATEX = pdflatex -halt-on-error --output-directory=tmp
 tmp/article.pdf: $(TEX) $(FIG) $(SRC) Makefile
