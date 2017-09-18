@@ -11,16 +11,18 @@ TEX += dos.tex
 TEX += plc.tex
 TEX += ack.tex bib.tex
 
-PNG = fig/architecture.png fig/hello.png fig/mobile.png 
-PNG += fig/person1.png fig/person2.png
+PNG = tmp/architecture.png tmp/hello.png tmp/mobile.png 
+PNG += tmp/person1.png tmp/person2.png tmp/socrat.pdf
 
 FIG = $(PNG)
 
-SRC = src/hello.c
+SRC = src/hello.c src/socrat.pl
 
 # dot to png
-%.png: %.dot
+tmp/%.png: fig/%.dot
 	dot -T png -o $@ $<
+tmp/%.pdf: fig/%.dot
+	dot -T pdf -o $@ $<
 
 .PHONY: all
 all: d3view.html $(PNG) tmp/article.pdf

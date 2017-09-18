@@ -8,7 +8,7 @@ You can download source code and release binary build .apk from
 \url{https://github.com/ponyatov/hedge}
 \bigskip
 
-\fig{fig/mobile.png}{mobile}{Mobile client implementation}{width=0.95\textwidth}
+\fig{tmp/mobile.png}{mobile}{Mobile client implementation}{width=0.95\textwidth}
 \clearpage
 
 Current client version still does not support graph-driven dynamic GUI, but can
@@ -79,7 +79,7 @@ $ merge
     (:class:Person{title:'Person'})
 \end{verbatim}
 
-\fig{fig/person1.png}{person1}{You is-a Person}{width=0.5\textwidth}
+\fig{tmp/person1.png}{person1}{You is-a Person}{width=0.5\textwidth}
 
 Not so impressive, so we need some good look for our data schemes. We can do it
 using some View\note{I mean Model View Controller template}\ attributes, which
@@ -101,7 +101,7 @@ And emphasize youself as center element:
 $ match (x:me) set x.fillcolor='green',x.shape='circle'
 \end{verbatim}
 
-\fig{fig/person2.png}{person2}{Colorized variant looks
+\fig{tmp/person2.png}{person2}{Colorized variant looks
 much better}{width=0.5\textwidth}
 
 We use \href{http://graphviz.org/}{GraphViz} so available \emph{view
