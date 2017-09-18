@@ -16,7 +16,7 @@ PNG += tmp/person1.png tmp/person2.png tmp/socrat.pdf
 
 FIG = $(PNG)
 
-SRC = src/hello.c src/socrat.pl
+SRC = src/hello.c src/socrat.pl src/socrat.log src/socrat.py
 
 # dot to png
 tmp/%.png: fig/%.dot

@@ -1,0 +1,3 @@
+ponyatov@debian:~/article$ swipl src/socrat.pl 
+% src/socrat.pl compiled 0.00 sec, 4 clauses
+socrates

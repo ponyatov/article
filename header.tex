@@ -68,7 +68,16 @@
 %% listings
 \usepackage{verbatim}
 \usepackage{listings}
+\lstset{
+basicstyle=\small,
+frame=single,
+numbers=left,numberstyle=\small,numbersep=2mm,
+tabsize=4,
+keywordstyle=\textbf,
+commentstyle=\color{blue}\textbf
+}
 \newcommand{\lst}[3]{\lstinputlisting[title=#2\ :\ #3]{#1}}
+\newcommand{\lstx}[4]{\lstinputlisting[language=$#4,title=#2\ :\ #3]{#1}}
 
 %% software menu & keys
 \usepackage[os=win]{menukeys}
