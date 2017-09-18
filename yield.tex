@@ -1,4 +1,20 @@
 \secrel{\yp\ traversal over graph database}\label{yield}
 
 In this section we'll see \href{http://yieldprolog.sourceforge.net/}{\yp}
-techinique in details. 
+techinique in details.
+
+\begin{verbatim}
+human(socrates).
+human('Chelsea').
+human('Hillary').
+human('Bill').
+\end{verbatim}
+
+Multiple facts with same predicate must be groupped into one generator function: 
+
+\lst{src/socrat1.py}{socrat.py}{facts in \yp}
+
+\fig{tmp/socrat1.pdf}{fig:socrat1}{Can be seen as this graph
+representation}{width=\textwidth}
+
+\lst{src/socrat2.py}{socrat.py}{facts in \yp}

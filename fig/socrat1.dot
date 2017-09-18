@@ -1,0 +1,7 @@
+digraph {
+"" [label="current inference point",shape=box];
+"" -> socrates [label=" 1\n human",color=red];
+"" -> Chelsea [label=" 2\n human"];
+"" -> Hillary [label=" 3\n human"];
+"" -> Bill [label=" 4\n human"];
+}

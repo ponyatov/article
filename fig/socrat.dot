@@ -1,7 +1,14 @@
 digraph {
 
-socrates;
-human;
-mortal; 
+X1 [label="X"];
+X2 [label="X"];
+X1 -> X1 [label = " mortal"];
+X2 -> X2 [label = " human"];
+
+":-" -> X1 [label=" L"];
+X2 -> ":-" [label=" R"];
+":-" [shape=diamond];
+
+socrates -> socrates [label=" human"]; 
 
 }

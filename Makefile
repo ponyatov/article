@@ -12,11 +12,12 @@ TEX += plc.tex
 TEX += ack.tex bib.tex
 
 PNG = tmp/architecture.png tmp/hello.png tmp/mobile.png 
-PNG += tmp/person1.png tmp/person2.png tmp/socrat.pdf
+PNG += tmp/person1.png tmp/person2.png tmp/socrat.pdf tmp/socrat1.pdf
 
 FIG = $(PNG)
 
-SRC = src/hello.c src/socrat.pl src/socrat.log src/socrat.py
+SRC = src/hello.c src/socrat.pl src/socrat.log 
+SRC += src/socrat1.py src/socrat2.py
 
 # dot to png
 tmp/%.png: fig/%.dot
