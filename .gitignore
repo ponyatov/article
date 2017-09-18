@@ -11,3 +11,5 @@ neo2viz.py.dot
 *.out
 *.lof
 *.pdf
+
+tmp/

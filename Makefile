@@ -25,6 +25,6 @@ SRC = src/hello.c
 .PHONY: all
 all: d3view.html $(PNG) article.pdf
 
-LATEX = pdflatex -halt-on-error
-article.pdf: $(TEX) $(FIG) $(SRC)
-	$(LATEX) $< && $(LATEX) $< 
+LATEX = pdflatex -halt-on-error --output-directory=tmp
+tmp/article.pdf: $(TEX) $(FIG) $(SRC) Makefile
+	$(LATEX) $< && $(LATEX) $<
