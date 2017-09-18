@@ -1,4 +1,4 @@
-TEX = main.tex header.tex intro.tex 
+TEX = article.tex header.tex intro.tex 
 TEX += model.tex neo4j.tex samplemain.tex
 TEX += inference.tex yield.tex rewrite.tex
 TEX += hyper.tex 

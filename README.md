@@ -22,11 +22,5 @@ passwd:		<shadowed>
 
 ### Files
 
-d3view.html + lib/		neo4j database visualizer in JavaScript/D3 
-						(run make to download offline libs)
-
-### Overleaf 
-
-Article [draft](https://www.overleaf.com/secret) on Overleaf
-
-git clone -o overleaf https://git.overleaf.com/secret overleaf
+d3view.html 	neo4j database visualizer in JavaScript/D3
+neo2viz.py		Python script to make query into GraphViz .dot plot
