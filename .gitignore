@@ -4,3 +4,10 @@ lib/
 passwd
 overleaf/
 neo2viz.py.dot
+
+*.log
+*.aux
+*.toc
+*.out
+*.lof
+*.pdf

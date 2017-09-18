@@ -1,0 +1,100 @@
+\secrel{\neo}
+
+The most simple and easy install graph database is
+\href{https://neo4j.com/}{\neo}. It has lot of data model limitations, in detail
+described in \autoref{hyper}\ section, but we will use \neo\ as graph storage
+for our prototype system, ready to use just now:
+
+\begin{itemize}[leftmargin=*]
+  
+\item
+install
+\href{http://www.oracle.com/technetwork/java/javase/downloads/index.html}{\java\
+SE} for your system\note{install full
+\href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{JDK}
+if you not limited in disk space, or 
+\href{http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html}{JRE}
+only}.
+Download .tag.gz package and
+unpack it in user home directory, or somewhere else
+\begin{verbatim}
+user@unix$ cd ~ ; tar zx < Downloads/
+\end{verbatim}
+
+\item
+add to \verb|JAVA_HOME| and \verb|PATH| environment variables points to your
+\java\ install/bin directory
+
+add to file \verb|~/.profile|
+\begin{verbatim}
+. ~/.setenv
+\end{verbatim}
+add file \verb|~/.xsessionrc|
+\begin{verbatim}
+. ~/.setenv
+\end{verbatim}
+add file \verb|~/.setenv|
+\begin{verbatim}
+export JAVA_HOME="/home/user/jdk1.8.0_131"
+export PATH="$JAVA_HOME/bin:$PATH"
+\end{verbatim}
+
+\item
+download \href{https://neo4j.com/download/community-edition/}{\neo\ community
+edition} distribution archive and unpack it by commands:
+\begin{verbatim}
+unix:~$ tar zx < Downloads/neo4j-community-3.2.3-unix.tar.gz
+\end{verbatim}
+\begin{verbatim}
+windows> unzip Downloads/neo4j-community-3.2.3-windows.zip
+\end{verbatim}
+
+\item 
+
+start \neo\ server in console mode (recommended) from your home directory:
+\begin{verbatim}
+user@unix$ ~/neo4j-community-3.2.3/bin/neo4j console
+\end{verbatim}
+or in daemon mode under current user
+\begin{verbatim}
+user@unix$ ~/neo4j-community-3.2.3/bin/neo4j start
+\end{verbatim}
+You can stop \neo\ server by pressing \keys{Ctrl-C}\ in console or run stop
+command in daemon mode
+\begin{verbatim}
+user@unix$ ~/neo4j-community-3.2.3/bin/neo4j stop
+\end{verbatim}
+If your Java was not installed properly, you will get errors like
+\begin{verbatim}
+ERROR: JAVA_HOME is incorrectly defined
+as /home/ponyatov/jdk1.8.0_131
+\end{verbatim}
+(the executable \verb|/home/ponyatov/jdk1.8.0_131/bin/java| does not exist)
+
+Also you can install only JRE and run \neo\ with directly selected Java runtime
+directory:
+\begin{verbatim}
+user@unix$ JAVA_HOME=~/jre1.8.0_144 \
+    ~/neo4j-community-3.2.3/bin/neo4j console
+\end{verbatim}
+
+\item connect to \url{http://localhost:7474/}\ with any JavaScript-enabled web
+browser
+
+\item connect to graphdb server via command
+\begin{verbatim}
+:server connect
+host: bolt://localhost:7687
+username: neo4j
+password (default): neo4j
+\end{verbatim}
+\menu{Connect}
+
+\item you will be asked for new password for \neo\ user
+\begin{verbatim}
+New password: ********
+Repeat new password: ********
+\end{verbatim}
+\menu{Change password}
+  
+\end{itemize}

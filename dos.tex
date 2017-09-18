@@ -1,0 +1,41 @@
+\secrel{Large-scale dynamic object system}\secdown
+
+I’m impressed with SmallTalk language and interactive system see
+\cite{bluebook}, but I don’t like SmallTalk syntax itself. I’m joined to
+StackOverflow
+\href{https://stackoverflow.com/questions/5732017/python-development-environments-like-smalltalk/42111909}{question}
+about SmallTalk in Python, and I’m dreaming about :
+
+\begin{itemize}[nosep,leftmargin=*]
+  \item 
+system with live objects (dynamic object system) distributed over cluster 
+  \item 
+dedicated servers (beowulf cluster) or the best is cloud of user computers
+  \item 
+Pythonic control and programming language syntax able to work on 
+  \item 
+all modern computer platforms (PC, embedded and mobile devices) with 
+  \item 
+widely
+used OSes (Windows, MacOS, Linux, Android) as hosted OS.
+\end{itemize}
+
+\secrel{Interpreter}
+
+System user interface based on command line using tiny interpreter:
+\url{https://github.com/ponyatov/I}
+
+This interpreter also will be demo application for this paper showing some hints
+on GDP methodology.
+
+So I’m going to use this interpreter as Python replacement for scripting in my
+\href{https://github.com/ponyatov/L}{embedded Linux} projects: Python has
+problematic build process require lot of side fixes (see BuildRoot sources), so tiny clean C++ interpreter core will be
+much more sufficient, especially for
+\href{https://forum.arduino.cc/index.php?topic=442285.msg3390896#msg3390896}{non-Linux
+hardware devices} made on modern Cortex-M microcontrollers.
+
+\secrel{Object model with message passing}
+
+\secdown
+

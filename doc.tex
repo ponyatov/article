@@ -1,0 +1,39 @@
+\secrel{Documentation centric sample application: this article
+self-representation}\secdown 
+\secrel{Documentation structure elements}
+\secrel{Google Docs API interfacing}
+
+\secrel{\LaTeX\ render subsystem}\label{dynatex}
+
+Going ideas noted in this \so\ question, let's realize \LaTeX\ render system
+able to work with local document modifications in real-time manner.
+
+\secrel{Simple script for GraphViz graph extraction}
+
+For purpose of simple visualization you can use
+\href{https://github.com/ponyatov/article/raw/master/neo2viz.py}{neo2viz.py}
+sample script I use for this paper figures.
+
+Giving Cypher query from command line you will get .dot script on stdout can be
+ redirected to any file.
+ 
+Graph db elements should have some attributes with \verb|dot_| prefix
+corresponds to graphviz attributes.
+For node and edge labeling \verb|title:| attribute will be used.
+
+Script require Python BOLT driver installation described in next section.
+
+\secrel{\neo\ \py\ connection driver install}
+
+To use \neo\ in \py\ you must follow this manual to install BOLT driver for
+\py. Run this:
+
+\begin{verbatim}
+unix:~$ sudo pip install neo4j-driver
+\end{verbatim}
+
+and consult
+\href{https://github.com/ponyatov/article/raw/master/neo2viz.py}{neo2viz.py}
+source as sample for using \neo\ in \py.
+
+\secup

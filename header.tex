@@ -1,0 +1,83 @@
+\documentclass[oneside,12pt]{article}
+\usepackage[a5paper,margin=5mm]{geometry}%,showframe
+%\usepackage{showframe}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage[colorlinks,
+	linkcolor={red!50!black},citecolor={blue!50!black},urlcolor={blue!80!black}]{hyperref}
+
+%% cross references [hrefs]
+\usepackage{caption}
+\def\figureautorefname~#1\null{fig.#1}
+\newcommand{\email}[1]{$<$\href{#1}{#1}$>$}
+
+%% figures
+\usepackage[pdftex]{graphicx}
+\newcommand{\fig}[4]{
+\begin{figure}[ht]
+{\centering\noindent\includegraphics[#4]{#1}
+\protect\caption{#3}\label{fig:#2}}
+\end{figure}
+}
+\newcommand{\figref}[1]{$[$fig.{\ref{#1}}$]$}
+
+% relative sectioning
+\usepackage{ifthen}
+\newcounter{secdepth}\setcounter{secdepth}{0}
+\newcommand{\secup}{\addtocounter{secdepth}{1}}
+\newcommand{\secdown}{\addtocounter{secdepth}{-1}}
+\newcommand{\secrel}[1]{
+\ifthenelse{\equal{\value{secdepth}}{0}}{\part{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-1}}{\chapter{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-2}}{\section{#1}}{}
+\ifthenelse{\equal{\value{secdepth}}{-3}}{\subsection{#1}}{}
+\ifthenelse{\value{secdepth} < -3}{\subsubsection{#1}}{}
+}
+\newcommand{\secly}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\subsecly}[1]{\section*{#1}\addcontentsline{toc}{subsection}{#1}}
+
+% misc
+
+\renewcommand{\emph}[1]{\textbf{#1}}
+\newcommand{\note}[1]{\footnote{\ #1}}
+
+% [nosep] option in lists/enums
+\usepackage{enumitem}
+% frame box
+\usepackage{framed}
+
+%% languages/programs
+
+\newcommand{\prog}[1]{\textit{#1}}
+\newcommand{\lang}[1]{$#1$}
+
+\newcommand{\C}[1]{\lang{C_{#1}}}
+\newcommand{\cpp}{\lang{C_{+^+}}}
+\newcommand{\java}{\lang{Java}}
+\newcommand{\py}{\lang{Python}}
+
+\newcommand{\prolog}{\lang{Prolog}}
+\newcommand{\yp}{\lang{YieldProlog}}
+
+\newcommand{\xsb}{\prog{XSB}}
+
+\newcommand{\neo}{\prog{neo4j}}
+
+\newcommand{\so}{$StackOverflow$}
+
+%% listings
+\usepackage{verbatim}
+\usepackage{listings}
+\newcommand{\lst}[3]{\lstinputlisting[title=#2\ :\ #3]{#1}}
+
+%% software menu & keys
+\usepackage[os=win]{menukeys}
+\usepackage{amssymb} % windows key
+\newcommand{\winstart}{$\boxplus$}
+\newcommand{\winr}{\keys{\winstart+R}}
+\newcommand{\lms}{$\lhd$}
+\newcommand{\dblms}{$\lhd\lhd$}
+\newcommand{\rms}{$\rhd$}
+\newcommand{\checkbox}{$\boxtimes$}
+\newcommand{\uncheckbox}{$\square$}
+

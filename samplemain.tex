@@ -1,0 +1,17 @@
+\secrel{Sample program graph model}
+
+For demo purposes let’s see simple program for UNIX in pure \C{}:
+
+\lst{src/hello.c}{hello.c}{Hello World}
+
+\fig{fig/hello.png}{hello}{Hello World simple program
+in \C{}}{width=\textwidth}
+
+Here we see types taxonomy for primitive subset of \C{}\ language, \verb|main()|
+function with arguments and \verb|return| statement. Note that function
+arguments in \C\ must be ordered, so we use \emph{next} relation to add this
+order. Other notable thing is double return relation of main() function: this is
+sample of inherited relation\ --- \verb|(main:function)-[:return]->(int:type)|
+relation was inherited from first \verb|main-[:return]->(0:int)| relation
+corresponds to \verb|return 0| statement. \textbf{ako} (a-kind-of, superclass)
+and \textbf{isa} (is-a) relations corresponds to inheritance and instantiation.

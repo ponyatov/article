@@ -1,0 +1,121 @@
+\secrel{Demo application: personal task/time planning system}\secdown
+
+\secrel{Distributed architecture with mobile Android client side}
+
+You can download source code and release binary build .apk from
+
+\bigskip
+\url{https://github.com/ponyatov/hedge}
+\bigskip
+
+\fig{fig/mobile.png}{mobile}{Mobile client implementation}{width=0.95\textwidth}
+\clearpage
+
+Current client version still does not support graph-driven dynamic GUI, but can
+be used for sensor data collection for experimenting with \neo\ scripts and
+planning and analysis algorithms.
+
+For client use you must create \neo\ database instance on external server
+\note{\href{http://www.graphenedb.com/}{graphenedb.com} can be used with free
+account}, and put BOLT connection line into app configuration. Current version
+have problems with on-device detached mirror\note{\neo\ for Android required},
+so you can use application only in online mode. Online connection to remote
+graphdb was done via \neo\ JDBC by using
+\href{https://github.com/neo4j-contrib/neo4j-jdbc#minimum-viable-snippet}{this
+manual}.
+
+\secrel{What is personal planning}
+
+In everyday life, I constantly find myself failing and forgetting to do a lot of
+things. This is not because of the laziness or folly, but because of the many
+competing interests that are characteristic of most of people. We have axes in
+money thru job, hobby as fallback for achievement self-satisfaction in
+professional, activities for health care, obligations to family and friends,
+some of us have new interests and thirst for knowledge. So to achieve success we
+can rely on the achievements of modern electronics, and make our T-800 CPU from
+an Android mobile phone and inference system based on neo4j graph database.
+
+\bigskip
+Go to \href{https://www.graphenedb.com/}{graphenedb.com} or other neo4j online
+hosting, sign up/login and 
+\begin{itemize}[nosep,leftmargin=*]
+  \item 
+create new Planning database (free hobby sandbox is good for first time):\\
+\emph{don't forget to select modern version neo4j 3.2.3},\\
+it has some goodies in Cypher syntax and webgui.
+  \item 
+Create user for remote access via BOLT protocol: \verb|hedge|.
+  \item 
+Save your password and BOLT access line:\\ 
+\verb|bolt://hobby-bahdmkgcjildgbkepggmibpl.dbs.graphenedb.com:24786|
+  \item 
+Switch to web GUI via Databases/Planning/Overview/Neo4j Browser/Launch
+\end{itemize}
+\bigskip
+
+\noindent
+For doing some scripting you can use samples hosted at\\
+\url{https://github.com/ponyatov/article} :
+
+\bigskip
+\begin{tabular}{l l}
+\verb|d3view.html + lib/|
+&
+neo4j database visualizer in JavaScript/D3\\&(run make to download offline
+libs)
+\\
+\verb|neo2viz.py| & \py\ client makes GraphViz plots \\
+\end{tabular}
+\bigskip
+
+
+First create yourself as center of Universe:
+\begin{verbatim}
+$ merge
+    (:me{ firstname:'Dmitry', secondname:'Ponyatov',
+          email:'dponyatov@gmail.com'},
+          title:'Ponyatov')
+-[:isa]->
+    (:class:Person{title:'Person'})
+\end{verbatim}
+
+\fig{fig/person1.png}{person1}{You is-a Person}{width=0.5\textwidth}
+
+Not so impressive, so we need some good look for our data schemes. We can do it
+using some View\note{I mean Model View Controller template}\ attributes, which
+will set view representation.
+
+So, first make query\note{later we will make it triggerable} which will update
+all class-looking elements:
+
+\begin{verbatim}
+$ match (x)-[r:isa]->(y) set
+        r.color='blue',r.fontcolor='blue',
+        y:class,y.shape='box',y.fillcolor='lightpink'
+    return x,r,y 
+\end{verbatim}
+
+And emphasize youself as center element:
+
+\begin{verbatim}
+$ match (x:me) set x.fillcolor='green',x.shape='circle'
+\end{verbatim}
+
+\fig{fig/person2.png}{person2}{Colorized variant looks
+much better}{width=0.5\textwidth}
+
+We use \href{http://graphviz.org/}{GraphViz} so available \emph{view
+attributes}\ --- shape and color names see in manual:
+\bigskip
+
+\begin{tabular}{l l}
+Colors:&\url{http://www.graphviz.org/doc/info/colors.html}\\
+Shapes:&\url{http://www.graphviz.org/doc/info/shapes.html}\\
+\end{tabular}
+
+
+\secrel{Android KB}
+\secrel{Resource analysis in task management and logistics applications}
+\secrel{Geopositioning in logistic applications}
+
+\secup
