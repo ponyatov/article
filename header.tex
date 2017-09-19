@@ -2,9 +2,14 @@
 \usepackage[a5paper,margin=5mm]{geometry}%,showframe
 %\usepackage{showframe}
 \usepackage[utf8]{inputenc}
+
+% colors
+
 \usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
 \usepackage[colorlinks,
-	linkcolor={red!50!black},citecolor={blue!50!black},urlcolor={blue!80!black}]{hyperref}
+	linkcolor={red!50!black},citecolor={blue!50!black},
+	urlcolor={blue!80!black}]{hyperref}
 
 %% cross references [hrefs]
 \usepackage{caption}
@@ -40,7 +45,7 @@
 
 \renewcommand{\emph}[1]{\textbf{#1}}
 \newcommand{\note}[1]{\footnote{\ #1}}
-\newcommand{\term}[1]{\textcolor{green}{#1}}
+\newcommand{\term}[1]{\textcolor{darkgreen}{#1}}
 
 % [nosep] option in lists/enums
 \usepackage{enumitem}
