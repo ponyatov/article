@@ -8,9 +8,8 @@ class Variable:
 
 def human(V):
     yield V << 'socrates'
-    yield V << "Chelsea"
-    yield V << "Hillary"
-    yield V << "Bill"
+    yield V << 'aristotle'
+    yield V << 'plato'
     
 V = Variable()
 # equivalent to human(V) query

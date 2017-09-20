@@ -1,7 +1,11 @@
-human(socrates).                % (unary) fact
-mortal(X) :- human(X).          % rule
+human(socrates).                % (unary) facts
+human(aristotle).
+human(plato).
+god(zeus).                      % and who is a god
+god(apollo).
 
-% SWI Prolog specific syntax
-:- initialization
-    mortal(X),                  % query 
-    writeln(X),halt(0).
+mortal(X) :- human(X).          % rule 
+
+% load in SWI Prolog and run (press ; for next)
+
+% mortal(X).                  	% query 
